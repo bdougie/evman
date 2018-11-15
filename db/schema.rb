@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20180806045336) do
   create_table "announcement_users", force: :cascade do |t|
     t.bigint "announcement_id"
     t.bigint "user_id"
-    t.text "answer"
+    t.string "answer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["announcement_id"], name: "index_announcement_users_on_announcement_id"
@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(version: 20180806045336) do
     t.datetime "updated_at", null: false
     t.integer "state_id"
     t.string "display"
-    t.bigint "population"
+    t.bigint "population", default: 0
     t.index "to_tsvector('english'::regconfig, f_unaccent((display)::text))", name: "index_fulltext_cities", using: :gin
     t.index ["country_id"], name: "index_cities_on_country_id"
     t.index ["geoid"], name: "index_cities_on_geoid"

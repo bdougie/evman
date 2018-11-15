@@ -4,6 +4,10 @@ require 'rails/all'
 
 Bundler.require(*Rails.groups)
 
+Dotenv::Railtie.load
+
+HOSTNAME = ENV['HOSTNAME']
+
 module Evman
   class Application < Rails::Application
     config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
