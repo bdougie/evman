@@ -52,7 +52,7 @@ Then(/^I should see new attendee$/) do
 end
 
 When(/^I submit new event talk form$/) do
-  @talk = FactoryGirl.create :talk, user: current_user, team: current_team
+  @talk = FactoryBot.create :talk, user: current_user, team: current_team
   event = observable
   on(Pages::Events::ShowPage) do |po|
     po.submit_new_event_talk_form user_id:  current_user.id,

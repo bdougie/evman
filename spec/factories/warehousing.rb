@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :warehouse do
     sequence(:name) { |x| "Warehouse #{x}" }
     after(:create) do |warehouse, enumerator|

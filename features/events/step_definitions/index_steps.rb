@@ -13,7 +13,7 @@ Given(/^"(.*)" event exists in current team$/) do |type|
   else
     raise ArgumentError, 'unknown event type'
   end
-  event = FactoryGirl.create(:event, options)
+  event = FactoryBot.create(:event, options)
   observe_object event
 end
 
@@ -24,7 +24,7 @@ end
 
 When(/^I am attending that event/) do
   expect(observable).to be_instance_of Event
-  FactoryGirl.create(:attendee, user: current_user, event: observable)
+  FactoryBot.create(:attendee, user: current_user, event: observable)
 end
 
 Then /^I should see it$/ do

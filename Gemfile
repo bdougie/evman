@@ -97,7 +97,7 @@ group :development, :test do
   gem 'hirb'
 
   gem 'rspec-rails', '~> 3.5.1'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
 end
 
 group :production do

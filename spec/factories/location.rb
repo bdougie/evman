@@ -1,17 +1,17 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :city do
     sequence(:display) {|x| "City #{x}"}
     country
 
     after :create do |city|
-      FactoryGirl.create :city_name, city: city, name: "#{city.display}"
+      FactoryBot.create :city_name, city: city, name: "#{city.display}"
       City.update_fulltext_view
     end
   end
 
   factory :city_name do
     sequence(:name) { |x| "CityName #{x}"}
-    language { Language.first || FactoryGirl.create(:language) }
+    language { Language.first || FactoryBot.create(:language) }
   end
 
   factory :country do

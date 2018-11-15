@@ -28,7 +28,7 @@ Given /^User with identity exists ?(.*):$/ do |options, table|
   login = (options == 'and logged in')
 
   uid, provider, name, email = table.rows.first
-  user = FactoryGirl.create :user, name: name, email: email
+  user = FactoryBot.create :user, name: name, email: email
   user.identities.create!(provider: provider, uid: uid)
   user.add_email(email)
   @registered_user = user
@@ -77,7 +77,7 @@ Then /^Current user should have identities:$/ do |table|
 end
 
 When /^Team with email domain "(.*)" exists$/ do |domain|
-  @team = FactoryGirl.create :team, email_domain: domain
+  @team = FactoryBot.create :team, email_domain: domain
 end
 
 Then /^I should be in a team$/ do
@@ -89,6 +89,6 @@ Given /^Evman requires invitation$/ do
 end
 
 Given /^Invitation exists$/ do
-  @invitation = FactoryGirl.create :team_invitation, email: 'john@github.com'
+  @invitation = FactoryBot.create :team_invitation, email: 'john@github.com'
   @team = @invitation.team
 end

@@ -140,10 +140,10 @@ GEM
       concurrent-ruby (~> 1.0.0)
     erubi (1.7.1)
     execjs (2.7.0)
-    factory_girl (4.9.0)
+    factory_bot (4.11.1)
       activesupport (>= 3.0.0)
-    factory_girl_rails (4.9.0)
-      factory_girl (~> 4.9.0)
+    factory_bot_rails (4.11.1)
+      factory_bot (~> 4.11.1)
       railties (>= 3.0.0)
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
@@ -460,7 +460,7 @@ DEPENDENCIES
   database_cleaner
   devise
   elastic-apm
-  factory_girl_rails
+  factory_bot_rails
   faraday
   font-awesome-sass (~> 4.0)
   hirb
@@ -518,4 +518,4 @@ DEPENDENCIES
   wisper
 
 BUNDLED WITH
-   1.16.2
+   1.16.5

@@ -16,9 +16,9 @@ Then(/^I should see a new expense$/) do
 end
 
 When(/^I submit add warehouse item form$/) do
-  warehouse = FactoryGirl.create :warehouse, teams: [current_team]
-  item = FactoryGirl.create :warehouse_item, warehouse: warehouse
-  batch = FactoryGirl.create :warehouse_batch, item: item
+  warehouse = FactoryBot.create :warehouse, teams: [current_team]
+  item = FactoryBot.create :warehouse_item, warehouse: warehouse
+  batch = FactoryBot.create :warehouse_batch, item: item
   on(Pages::Events::WarehouseTransactionsPage) do |po|
     po.new_warehouse_transaction_button.click
     wait_for_ajax

@@ -1,7 +1,7 @@
 When(/^Event associations are bootstraped$/) do
   @bootstrap_data = {
-      event_type: FactoryGirl.create(:event_type, team: current_team),
-      city: FactoryGirl.create(:city)
+      event_type: FactoryBot.create(:event_type, team: current_team),
+      city: FactoryBot.create(:city)
   }
 end
 
@@ -70,7 +70,7 @@ When(/^I submit event form$/) do
 end
 
 When(/^Example event exists and observed$/) do
-  observe_object FactoryGirl.create(:event, team: @current_team)
+  observe_object FactoryBot.create(:event, team: @current_team)
 end
 
 Then(/^I should see edit event modal$/) do
