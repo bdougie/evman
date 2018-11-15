@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'dotenv-rails', groups: [:development, :test]
 gem 'bundler', '>= 1.7.0'
 
 gem 'rails', '~> 5.1.0'
